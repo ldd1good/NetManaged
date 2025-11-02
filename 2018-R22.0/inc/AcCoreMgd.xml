@@ -935,7 +935,7 @@ A DSD file is an INI file used when publishing multiple sheets with the PUBLISH 
         </member>
         <member name="M:Autodesk.AutoCAD.GraphicsSystem.Manager.ReleaseGraphicsKernel(Autodesk.AutoCAD.GraphicsSystem.GraphicsKernel)">
             <summary>Removes a reference to the specified graphics kernel.</summary>
-            <param name="kernel"> Graphics Kernel to release<</param>
+            <param name="kernel"> Graphics Kernel to release.</param>
         </member>
         <member name="M:Autodesk.AutoCAD.GraphicsSystem.Manager.CreateViewport(Autodesk.AutoCAD.GraphicsSystem.Device,Autodesk.AutoCAD.DatabaseServices.ViewportTableRecord)">
             <summary>This is CreateViewport, a member of class Manager.</summary>
