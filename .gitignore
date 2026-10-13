@@ -36,3 +36,9 @@ desktop.ini
 # 日志文件
 *.log
 
+# 本地自建内容 - 不提交（保持 fork 与上游可干净同步）
+# 说明：NuGet 抓来的补充版本、索引、工具脚本，均可由 tools/ 下的脚本重建
+/tools/
+/sdk-index.json
+/2027-R26.0/
+
