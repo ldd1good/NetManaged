@@ -1,450 +1,149 @@
-# ObjectARX SDK - AutoCAD 二次开发支持库
+# ObjectARX SDK（精简版 · .NET 托管程序集库）
 
-[![zread](https://img.shields.io/badge/Ask_Zread-_.svg?style=flat&color=00b0aa&labelColor=000000&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuOTYxNTYgMS42MDAxSDIuMjQxNTZDMS44ODgxIDEuNjAwMSAxLjYwMTU2IDEuODg2NjQgMS42MDE1NiAyLjI0MDFWNC45NjAxQzEuNjAxNTYgNS4zMTM1NiAxLjg4ODEgNS42MDAxIDIuMjQxNTYgNS42MDAxSDQuOTYxNTZDNS4zMTUwMiA1LjYwMDEgNS42MDE1NiA1LjMxMzU2IDUuNjAxNTYgNC45NjAxVjIuMjQwMUM1LjYwMTU2IDEuODg2NjQgNS4zMTUwMiAxLjYwMDEgNC45NjE1NiAxLjYwMDFaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik00Ljk2MTU2IDEwLjM5OTlIMi4yNDE1NkMxLjg4ODEgMTAuMzk5OSAxLjYwMTU2IDEwLjY4NjQgMS42MDE1NiAxMS4wMzk5VjEzLjc1OTlDMS42MDE1NiAxNC4xMTM0IDEuODg4MSAxNC4zOTk5IDIuMjQxNTYgMTQuMzk5OUg0Ljk2MTU2QzUuMzE1MDIgMTQuMzk5OSA1LjYwMTU2IDE0LjExMzQgNS42MDE1NiAxMy43NTk5VjExLjAzOTlDNS42MDE1NiAxMC42ODY0IDUuMzE1MDIgMTAuMzk5OSA0Ljk2MTU2IDEwLjM5OTlaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik0xMy43NTg0IDEuNjAwMUgxMS4wMzg0QzEwLjY4NSAxLjYwMDEgMTAuMzk4NCAxLjg4NjY0IDEwLjM5ODQgMi4yNDAxVjQuOTYwMUMxMC4zOTg0IDUuMzEzNTYgMTAuNjg1IDUuNjAwMSAxMS4wMzg0IDUuNjAwMUgxMy43NTg0QzE0LjExMTkgNS42MDAxIDE0LjM5ODQgNS4zMTM1NiAxNC4zOTg0IDQuOTYwMVYyLjI0MDFDMTQuMzk4NCAxLjg4NjY0IDE0LjExMTkgMS42MDAxIDEzLjc1ODQgMS42MDAxWiIgZmlsbD0iI2ZmZiIvPgo8cGF0aCBkPSJNNCAxMkwxMiA0TDQgMTJaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik00IDEyTDEyIDQiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K&logoColor=ffffff)](https://zread.ai/CNIong/ObjectARX-SDK)
+> AutoCAD 二次开发 **.NET（C# / VB.NET）插件**所需的托管程序集（DLL + XML）精选库。
+> 按 **.NET TFM** 只保留代表版本，覆盖 **AutoCAD 2006 – 2027**。
 
-> AutoCAD ObjectARX 软件开发工具包完整集合（R14-2026，包含所有版本）
-
----
-
-## 📖 简介
-
-本仓库包含 **AutoCAD ObjectARX 软件开发工具包（SDK）** 的完整版本集合，涵盖从 **AutoCAD R14 (1998)** 到 **AutoCAD 2026 (R25.1)** 的所有主要版本。
-
-**ObjectARX** 是 Autodesk 提供的用于 AutoCAD 二次开发的 C++ 和 .NET API，允许开发者创建功能强大的 AutoCAD 应用程序和插件。
+> ⚠️ 本仓库是上游 `HexTTX/ObjectARX-SDK` 的 **fork（`ldd1good/ObjectARX-SDK`）**，已大幅精简，仅保留 .NET 开发必需内容，与原仓库不一致，属预期分叉。
 
 ---
 
-## 🗂️ 版本列表
+## 为什么精简
 
-本仓库包含以下 **26 个版本** 的 ObjectARX SDK：
+原始仓库含 26 个版本完整 SDK（C++ 头、`.lib`、samples、docs、utils…）约 2.3 GB，但 .NET 插件编译**只需要**每个版本 `inc/` 下的**托管 DLL + 同名 XML**。其余内容对 C# 编译毫无用处，已全部删除。
 
-| AutoCAD 版本 | ObjectARX 版本 | 目录名称/文件 | 状态 |
-|------------|--------------|-------------|------|
-| AutoCAD R14 (1998) | R14 | `R14.exe` (安装包) | ✅ |
-| AutoCAD 2000 | R15.0 | `2000-R15.0` | ✅ |
-| AutoCAD 2000i | R15.1 | `2000i-R15.1` | ✅ |
-| AutoCAD 2002 | R15.2 | `2002-R15.2` | ✅ |
-| AutoCAD 2004 | R16.0 | `2004-R16.0` | ✅ |
-| AutoCAD 2005 | R16.1 | `2005-R16.1` | ✅ |
-| AutoCAD 2006 | R16.2 | `2006-R16.2` | ✅ |
-| AutoCAD 2007 | R17.0 | `2007-R17.0` | ✅ |
-| AutoCAD 2008 | R17.1 | `2008-R17.1` | ✅ |
-| AutoCAD 2009 | R17.2 | `2009-R17.2` | ✅ |
-| AutoCAD 2010 | R18.0 | `2010-R18.0` | ✅ |
-| AutoCAD 2011 | R18.1 | `2011-R18.1` | ✅ |
-| AutoCAD 2012 | R18.2 | `2012-R18.2` | ✅ |
-| AutoCAD 2013 | R19.0 | `2013-R19.0` | ✅ |
-| AutoCAD 2014 | R19.1 | `2014-R19.1` | ✅ |
-| AutoCAD 2015 | R20.0 | `2015-R20.0` | ✅ |
-| AutoCAD 2016 | R20.1 | `2016-R20.1` | ✅ |
-| AutoCAD 2017 | R21.0 | `2017-R21.0` | ✅ |
-| AutoCAD 2018 | R22.0 | `2018-R22.0` | ✅ |
-| AutoCAD 2019 | R23.0 | `2019-R23.0` | ✅ |
-| AutoCAD 2020 | R23.1 | `2020-R23.1` | ✅ |
-| AutoCAD 2021 | R24.0 | `2021-R24.0` | ✅ |
-| AutoCAD 2022 | R24.1 | `2022-R24.1` | ✅ |
-| AutoCAD 2023 | R24.2 | `2023-R24.2` | ✅ |
-| AutoCAD 2024 | R24.3 | `2024-R24.3` | ✅ |
-| AutoCAD 2025 | R25.0 | `2025-R25.0` | ✅ |
-| AutoCAD 2026 | R25.1 | `2026-R25.1` | ✅ |
+本库因此只保留：
 
-> **提示**: 
-> - **R14 (1998)**: 以 `R14.exe` 安装包形式提供，使用 Visual C++ 5.0 开发
-> - 版本对照表图片位于文档末尾，包含每个版本的详细开发环境要求
+- 每个代表版本 `inc/` 中按文件名筛选出的 **13 个托管程序集**（DLL）+ 同名 `.xml`（IntelliSense）
+- 配套工具脚本（见 `tools/`）
+
+> 这是 **.NET 库**，不是 C++ SDK。没有 `inc-x64` / `lib-*` / `samples` / `docs`，无法用于 ObjectARX(C++) 开发。
 
 ---
 
-## 📁 目录结构
+## 版本覆盖（5 个代表版本，按 .NET TFM 取最低一代）
 
-每个版本目录通常包含以下标准结构：
+| 目录 | AutoCAD 年份 | ObjectARX | .NET TFM | CLR | 覆盖年份 | 托管程序集 |
+|------|------------|-----------|----------|-----|---------|-----------|
+| `2006-R16.2` | 2006 | R16.2 | net2.0 | 2.0 | 2006–2012 | AcMgd + AcDbMgd（**2 个**，无 AcCoreMgd\*） |
+| `2013-R19.0` | 2013 | R19.0 | net4.5 | 4.0 | 2013–2014 | 三件套 + 7 个（**10 个**） |
+| `2015-R20.0` | 2015 | R20.0 | net48 | 4.0 | 2015–2024 | 同 2013（**10 个**），**主参考版本** |
+| `2025-R25.0` | 2025 | R25.0 | net8.0 | 8 | 2025 | 全 13 个 + 13 xml |
+| `2027-R26.0` | 2027 | R26.0 | net10.0 | 10 | 2026–2027 | 全 13 个 + 13 xml |
 
-```
-<版本目录>/
-├── inc/              # 头文件目录（32位）
-├── inc-x64/          # 头文件目录（64位）
-├── inc-win32/        # Windows 32位特定头文件
-├── lib/              # 库文件目录（32位，旧版本）
-├── lib-x64/          # 库文件目录（64位，新版本）
-├── docs/             # 文档目录（CHM、PDF等）
-├── samples/          # 示例代码
-│   ├── database/     # 数据库操作示例
-│   ├── entity/       # 实体对象示例
-│   ├── editor/       # 编辑器示例
-│   ├── graphics/     # 图形处理示例
-│   ├── reactors/     # 反应器示例
-│   ├── com/          # COM 接口示例
-│   ├── dotNet/       # .NET API 示例
-│   └── misc/         # 其他示例
-├── utils/            # 工具和实用程序
-│   ├── amodeler/     # 高级建模工具
-│   ├── brep/         # 边界表示法工具
-│   ├── HlrApi/       # 隐藏线移除 API
-│   └── Atil/         # AutoCAD 纹理图像库
-└── classmap/         # 类映射文件（DWG格式）
-```
+\* `AcCoreMgd` 自 2013 起才从 `AcMgd` / `AcDbMgd` 拆分出来，故 2006 仅有 2 个托管 DLL。
+
+**13 个托管程序集 stem**：`AcCoreMgd, AcCui, AcDbMgd, AcDbMgdBrep, AcDx, AcMgd, AcMr, AcSeamless, AcTcMgd, AcWindows, AdUIMgd, AdUiPalettes, AdWindows`
+（2006 含前 2 个；2013 / 2015 含前 10 个；2025 / 2027 含全 13 个。2013 / 2015 的 `inc/` 未带 `.xml`，IntelliSense 文档缺失属可接受的取舍。）
 
 ---
 
-## 📚 仓库内容
+## ★ 关键约束：.NET 运行时决定可运行范围
 
-### 头文件 (Header Files)
+.NET 插件绑的是 **.NET 运行时（CLR）**，不是 CAD 版本号：
 
-每个版本都包含完整的头文件集合：
-- **核心 API**: `rxapi.h`, `rxdefs.h` 等
-- **数据库 API**: `acdb.h`, `dbents.h` 等
-- **几何 API**: `acge.h`, `geassign.h` 等
-- **用户界面 API**: `acui.h`, `adui.h` 等
-
-### 库文件 (Library Files)
-
-预编译的静态库文件，包含：
-- `rxapi.lib` - ObjectARX 运行时 API
-- `acdb*.lib` - 数据库 API
-- `acge*.lib` - 几何库
-- `acgi*.lib` - 图形接口库
-- 以及其他相关库文件
-
-### 示例代码 (Samples)
-
-丰富的示例代码涵盖各种开发场景：
-
-#### 数据库操作 (`database/`)
-- ARXDBG - 调试工具示例
-- 实体遍历、事务处理
-- XData、XRecord 操作
-- 克隆和深拷贝
-
-#### 自定义实体 (`entity/`)
-- PolySamp - 多边形实体示例
-- 自定义对象创建
-- 实体属性扩展
-
-#### 用户界面 (`editor/`)
-- MFC 对话框示例
-- 工具面板示例
-- 上下文菜单
-
-#### 图形处理 (`graphics/`)
-- 视觉样式
-- 材质和渲染
-- 坐标系统
-
-#### 反应器 (`reactors/`)
-- 数据库反应器
-- 编辑器反应器
-- 协议反应器
-
-#### .NET API (`dotNet/`)
-- C# 和 VB.NET 示例
-- 事件处理
-- UI 扩展
-
-### 文档 (Documentation)
-
-文档通常以 CHM（帮助文件）或 PDF 格式提供：
-- `arxdev.chm` - 开发指南
-- `arxref.chm` - API 参考
-- `arxmgd.chm` - .NET API 文档
-- `readarx.chm` - 入门教程
-
-### 工具和实用程序 (Utilities)
-
-- **AModeler**: 高级建模工具库
-- **BRep**: 边界表示法几何库
-- **HlrApi**: 隐藏线移除功能
-- **Atil**: 纹理图像处理库
+- **同 CLR 代内"低版本编、高版本跑"成立**：用 `2006-R16.2`（net2.0 / CLR2.0）编译的插件，可在 2006–2012（同为 CLR2.0 宿主）任意版本加载。
+- **跨 CLR 代不可混用**：`2015-R20.0`（net48 / CLR4.0）的插件**不能**在 2006–2012（CLR2.0）宿主加载，反之亦然。
+- 因此 **不能**用 2015 的 net48 包去开发 2006–2012 的插件——必须回到 `2006-R16.2`（net2.0）。
+- 选代表版本的原则：**每个 .NET TFM 取覆盖区间内的最低 CAD 版本**（API 面最小、运行时兼容最高），其余年份复用同一目录的程序集引用即可。
 
 ---
 
-## 🚀 快速开始
+## 目录结构
 
-### 系统要求
-
-- **操作系统**: Windows（通常支持 Windows 7 及以上版本）
-- **开发环境**: Visual Studio（必须与目标 AutoCAD 版本匹配，详见下方版本要求表格）
-- **AutoCAD**: 需要安装对应版本的 AutoCAD 软件
-
-### Visual Studio 版本要求
-
-不同 AutoCAD 版本需要特定版本的 Visual Studio：
-
-| AutoCAD 版本 | Visual Studio 版本 | 平台支持 |
-|------------|------------------|---------|
-| AutoCAD R14 | Visual C++ 5.0 | 32 位 |
-| AutoCAD 2000-2004 | Visual C++ 6.0 或 Visual Studio .NET | 32 位 |
-| AutoCAD 2005-2006 | Visual Studio .NET 2002/2003 | 32 位 |
-| AutoCAD 2007-2009 | Visual Studio 2005 | 32 位 |
-| AutoCAD 2010-2012 | Visual Studio 2008 | 32/64 位 |
-| AutoCAD 2013-2014 | Visual Studio 2010 | 32/64 位 |
-| AutoCAD 2015-2016 | Visual Studio 2012 | 32/64 位 |
-| AutoCAD 2017-2019 | Visual Studio 2015 | 32/64 位 |
-| AutoCAD 2020-2021 | Visual Studio 2017 | **仅 64 位** |
-| AutoCAD 2022-2023 | Visual Studio 2019 | **仅 64 位** |
-| AutoCAD 2024-2025 | Visual Studio 2022 | **仅 64 位** |
-| AutoCAD 2026 | Visual Studio 2022 | **仅 64 位** |
-
-> ⚠️ **重要提示**: 
-> - ObjectARX 应用程序必须与 AutoCAD 版本严格匹配
-> - 从 AutoCAD 2020 开始，仅支持 64 位平台
-> - 详细版本对照表请查看文档末尾的图片
-
-### 编译示例
-
-#### 1. 选择对应版本目录
-
-```bash
-cd 2025-R25.0
+```
+ObjectARX-SDK/
+├── 2006-R16.2/inc/    # AcMgd.dll, AcDbMgd.dll
+├── 2013-R19.0/inc/    # 10 个托管 DLL
+├── 2015-R20.0/inc/    # 10 个托管 DLL（主参考）
+├── 2025-R25.0/inc/    # 13 个 DLL + 13 xml
+├── 2027-R26.0/inc/    # 13 个 DLL + 13 xml（NuGet 补充）
+├── tools/             # 工具脚本（gitignore，见下方）
+├── sdk-index.json     # 机器可读版本索引（gitignore，可重建）
+├── AutoCAD二开对照表_彩色.png / _黑白.png
+├── LICENSE
+└── README.md
 ```
 
-#### 2. 打开示例项目
-
-找到 `samples` 目录下的示例项目，使用 Visual Studio 打开 `.sln` 或 `.vcxproj` 文件。
-
-#### 3. 配置项目设置
-
-在 Visual Studio 项目属性中配置：
-
-**C/C++ → 常规 → 附加包含目录:**
-```
-$(OBJECTARX_SDK_PATH)\inc-x64
-$(OBJECTARX_SDK_PATH)\inc
-```
-
-**链接器 → 常规 → 附加库目录:**
-```
-$(OBJECTARX_SDK_PATH)\lib-x64
-```
-
-**链接器 → 输入 → 附加依赖项:**
-```
-rxapi.lib
-acdb25.lib
-acge25.lib
-acgi25.lib
-...
-```
-
-#### 4. 编译和运行
-
-- 编译项目生成 `.arx` 或 `.dll` 文件
-- 在 AutoCAD 中使用 `NETLOAD` 或 `APPLOAD` 命令加载插件
+每个版本目录内**只有 `inc/`**，且 `inc/` 内**只有托管 DLL（+xml）**。无 C++ 头、无 `.lib`、无 samples / docs。
 
 ---
 
-## 🛠️ 多版本编译环境配置
+## 在 .NET 项目里引用
 
-如果需要在 Visual Studio 2022 中编译多个版本的 ObjectARX 项目，可以配置 VS2022 以支持旧版本的编译器工具集。
+以 `csproj` 为例（目标 net48，开发 2015–2024 插件）：
 
-### 方法一：通过安装程序（推荐）
+```xml
+<ItemGroup>
+  <Reference Include="AcMgd">
+    <HintPath>..\ObjectARX-SDK\2015-R20.0\inc\AcMgd.dll</HintPath>
+    <Private>false</Private>
+  </Reference>
+  <Reference Include="AcDbMgd">
+    <HintPath>..\ObjectARX-SDK\2015-R20.0\inc\AcDbMgd.dll</HintPath>
+    <Private>false</Private>
+  </Reference>
+  <Reference Include="AcCoreMgd">
+    <HintPath>..\ObjectARX-SDK\2015-R20.0\inc\AcCoreMgd.dll</HintPath>
+    <Private>false</Private>
+  </Reference>
+</ItemGroup>
+```
 
-1. **安装 Visual Studio 2022**
-   
-   在安装时勾选以下工作负载和组件：
-   - **使用 C++ 的桌面开发**
-   - 在 **单个组件** 中勾选旧版本工具集：
-     - **MSVC v142 - VS 2019 C++ x64/x86 生成工具**
-     - **MSVC v141 - VS 2017 C++ x64/x86 生成工具**
-     - **MSVC v140 - VS 2015 C++ x64/x86 生成工具**（如果有）
+要点：
 
-2. **安装 Daffodil 插件**
-   
-   - 下载并安装 `Daffodil.ENU.msi`
-   - 下载地址：
-     - [GitHub Releases](https://github.com/KirillOsenkov/MSBuildProjectTools/releases)（搜索 Daffodil）
-     - [Visual Studio Marketplace](https://marketplace.visualstudio.com/)（搜索 "Daffodil"）
-     - 或通过搜索引擎搜索 "Daffodil Visual Studio 2022 download"
-   - 此插件帮助 Visual Studio 2022 识别和使用旧版本的编译器工具集
+- `<Private>false</Private>`：**不**把 SDK DLL 拷进输出目录。CAD 进程已加载同版本程序集，随包分发 / 合并会冲突。
+- 目标框架按上表选：2006–2012 → `net35`（CLR2.0）；2013–2014 → `net45`；2015–2024 → `net48`；2025 → `net8.0`；2026–2027 → `net10.0`。
+- 多目标（如 `net48` + `net8.0`）时，用 `TargetFramework` 条件选不同 `HintPath` 指向对应年份目录。
 
-3. **安装 Visual Studio 2010**
-   
-   安装 Visual Studio 2010 以提供 VC10.0 工具集，安装后 VS2022 即可识别并使用。
+---
 
-### 方法二：手动注册旧版本工具集
+## 工具脚本（`tools/`，本仓库 gitignore，不入库）
 
-如果不想安装完整的 Visual Studio 2010，可以手动复制并注册工具集：
+三者均可离线重建索引 / 补充版本，不影响主仓库内容：
 
-1. **复制工具集目录**
-   
-   - 从 Visual Studio 2010 安装目录复制 `VC` 目录
-   - 放置到 D 盘合适的位置（例如：`D:\VisualStudio\VC10\`）
-   - 💡 **建议**: 使用 D 盘可减轻 C 盘负担，同时保持目录结构清晰
+| 脚本 | 用途 |
+|------|------|
+| `fetch_acad_nuget.py` | 从官方 NuGet（`AutoCAD.NET` / `.Core` / `.Model`，Autodesk 署名 + Authenticode 签名，包版本 == R 号）按年份抓包解包到 `<year>-R<ver>/inc/`。例：`python tools/fetch_acad_nuget.py --year 2024` |
+| `gen_sdk_index.py` | 扫描所有版本目录生成 `sdk-index.json`（版本 → 托管程序集映射，机器可读） |
+| `slim_managed.py` | 按 13 个托管 stem 递归只保留 `dll+xml`，删掉其余文件与空目录（用于精简某个版本目录） |
 
-2. **注册工具集到注册表**
-   
-   在注册表中添加以下路径（根据实际安装路径调整）：
-   
+---
+
+## 还原被删的版本
+
+精简删除了 2000–2005、2007–2012、2014、2016–2024、2026 等目录，需要时可还原：
+
+1. **从 git 历史取回**（若该版本曾被提交过）：
+   ```bash
+   git checkout <commit> -- 2024-R24.3/
    ```
-   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisualStudio\10.0\Setup\VS
-   HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\VisualStudio\10.0\Setup\VS
+2. **从官方 NuGet 现抓**（推荐，2024 / 2026 等）：
+   ```bash
+   python tools/fetch_acad_nuget.py --year 2024
    ```
-   
-   在注册表路径下创建或修改以下键值：
-   
-   - `ProductDir` = `D:\VisualStudio\VC10\`（VC 目录路径）
-   - `VCInstallDir` = `D:\VisualStudio\VC10\VC\`
-   - `VSInstallDir` = `D:\VisualStudio\VC10\`（或根据实际情况调整）
-   
-   > 💡 **提示**: 如果 Visual Studio 2010 安装在默认位置，`VSInstallDir` 可能仍为 `C:\Program Files (x86)\Microsoft Visual Studio 10.0\`，需要根据实际情况调整。
-
-3. **验证配置**
-   
-   - 重启 Visual Studio 2022
-   - 在项目属性中检查 **平台工具集** 是否可以看到旧版本（如 v100, v140, v141, v142 等）
-
-### 注意事项
-
-⚠️ **重要提示**：
-- 不同版本的 AutoCAD 必须使用对应版本的 Visual Studio 编译器
-- 即使配置了多版本工具集，仍需要确保使用正确的工具集编译对应版本的插件
-- 建议为每个 AutoCAD 版本创建单独的项目配置或解决方案配置
-- **手动修改注册表前请先备份注册表**
-
-### 快速验证
-
-配置完成后，可以通过以下方式验证：
-
-1. 在 Visual Studio 2022 中打开任意 C++ 项目
-2. 右键项目 → **属性** → **常规** → **平台工具集**
-3. 查看下拉列表中是否包含已安装的工具集版本
+3. 重新生成索引：`python tools/gen_sdk_index.py`
 
 ---
 
-## 🔧 开发指南
+## 完整版本对照表
 
-### ObjectARX vs .NET API
+原仓库的 AutoCAD 版本 ↔ Visual Studio / .NET 要求对照图仍保留，供查全版本开发环境：
 
-<table>
-<tr>
-<td width="50%">
+![AutoCAD 二开对照表（彩色版）](AutoCAD二开对照表_彩色.png)
 
-#### ObjectARX (C++)
-
-- ✅ 性能最优，功能最全面
-- ✅ 适合复杂的底层操作
-- ⚠️ 需要 C++ 开发经验
-
-</td>
-<td width="50%">
-
-#### .NET API (C#/VB.NET)
-
-- ✅ 开发效率高，语法简洁
-- ✅ 适合快速开发 UI 和业务逻辑
-- ⚠️ 性能略低于 ObjectARX
-
-</td>
-</tr>
-</table>
-
-### 版本兼容性
-
-⚠️ **重要**: ObjectARX 应用程序必须与 AutoCAD 版本严格匹配。
-
-- AutoCAD 2025 的插件只能在 AutoCAD 2025 上运行
-- 旧版本插件无法在新版本 AutoCAD 上运行
-- 需要为每个目标 AutoCAD 版本单独编译
-
-### 调试技巧
-
-1. 使用 `ARXDBG` 示例工具进行调试
-2. 在 Visual Studio 中附加到 AutoCAD 进程进行调试
-3. 使用 `acutPrintf` 或 `.NET` 的 `System.Diagnostics.Debug` 输出调试信息
+![AutoCAD 二开对照表（黑白版）](AutoCAD二开对照表_黑白.png)
 
 ---
 
-## ⚠️ 重要注意事项
+## 许可证
 
-### 许可证
-
-ObjectARX SDK 受 Autodesk 许可协议约束，请遵守相关使用条款。
-
-### R14 版本特殊说明
-
-`R14.exe` 是 AutoCAD R14 (1998) 版本的 SDK 安装包，由于文件格式较老，可能需要：
-- 在兼容模式下运行（Windows 兼容性设置）
-- 使用旧版本 Windows 系统（如 Windows XP/7）解压
-- 或使用专门的解压工具
+- **仓库结构、README、`tools/` 脚本**：MIT License（见 `LICENSE`）。
+- **Autodesk ObjectARX SDK 文件**（各版本 `inc/` 下的 DLL / XML）：版权归 Autodesk, Inc.，受其专有许可协议约束，仅用于学习 / 开发目的。
 
 ---
 
-## 📖 资源链接
+## 仓库信息
 
-### 官方资源
-- [Autodesk ObjectARX 官方网站](https://www.autodesk.com/developer-network/platform-technologies/autocad/arx)
-- [AutoCAD 开发者中心](https://www.autodesk.com/developer-network/platform-technologies/autocad)
-
-### 社区论坛
-- [明经通道 CAD 社区](http://www.mjtd.com/) - 中国领先的 CAD 二次开发社区，开发讨论氛围活跃，提供大量技术资料和代码示例
-- [Autodesk 开发者论坛](https://forums.autodesk.com/) - Autodesk 官方开发者社区
-- [Linux do](https://linux.do/) - 优秀的技术社区站点，提供丰富的技术讨论和资源分享
-
-### 学习资源
-- ObjectARX 开发文档（位于各版本的 `docs/` 目录）
-- 示例代码（位于各版本的 `samples/` 目录）
-- ARXLabs（早期版本提供的教程）
-
----
-
-## 📞 支持
-
-如有问题，请按以下顺序尝试：
-
-1. 查阅对应版本的文档（`docs/` 目录）
-2. 参考示例代码（`samples/` 目录）
-3. 访问 [明经通道 CAD 社区](http://www.mjtd.com/) - 中文社区，讨论氛围活跃
-4. 访问 [Autodesk 开发者论坛](https://forums.autodesk.com/) - 官方英文社区
-5. 提交 [GitHub Issue](https://github.com/CNIong/ObjectARX-SDK/issues) - 报告问题或提出建议
-
----
-
-## 🤝 贡献
-
-如果您发现任何问题或有改进建议，欢迎提交 [Issue](https://github.com/CNIong/ObjectARX-SDK/issues) 或 [Pull Request](https://github.com/CNIong/ObjectARX-SDK/pulls)。
-
----
-
-## 📄 许可证
-
-### 仓库许可证
-
-本仓库采用 **MIT License** 许可，仅适用于：
-- 仓库结构、组织方式
-- README 文档及其他说明文件
-- 仓库维护者提供的工具和脚本
-
-### ObjectARX SDK 许可
-
-⚠️ **重要**: 本仓库中的 **Autodesk ObjectARX SDK 文件**受 Autodesk 专有许可协议约束，不属于 MIT License 范畴。
-
-- ObjectARX SDK 的版权归 **Autodesk, Inc.** 所有
-- 使用 ObjectARX SDK 时，必须遵守 Autodesk 的许可条款
-- 本仓库仅用于学习和开发目的
-- 请访问 [Autodesk 官方网站](https://www.autodesk.com/developer-network/platform-technologies/autocad/arx) 查看官方许可条款
-
-详细信息请参阅 [LICENSE](LICENSE) 文件。
-
----
-
-## 📋 AutoCAD 版本对照表
-
-以下图片详细描述了每个 AutoCAD 版本的开发环境要求（Visual Studio 版本、编译器版本、平台支持等）。
-
-### 彩色版本
-
-![AutoCAD二开对照表（彩色版）](AutoCAD二开对照表_彩色.png)
-
-### 黑白版本
-
-![AutoCAD二开对照表（黑白版）](AutoCAD二开对照表_黑白.png)
-
-> 💡 **建议**: 查阅这些图片文件获取准确的版本对应关系和开发环境要求信息。
-
----
-
-<div align="center">
-
-**最后更新**: 2025年 | **维护状态**: 持续更新中
-
-如有问题，请通过 [GitHub Issues](https://github.com/CNIong/ObjectARX-SDK/issues) 联系
-
-</div>
+- 上游：`HexTTX/ObjectARX-SDK`
+- 本 fork：`ldd1good/ObjectARX-SDK`（已精简，与上游内容不一致，预期）
+- 最后更新：2026-10-13
