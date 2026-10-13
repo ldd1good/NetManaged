@@ -1,9 +1,10 @@
-# ObjectARX SDK（精简版 · .NET 托管程序集库）
+# Net托管类（AutoCAD .NET 托管程序集库）
 
 > AutoCAD 二次开发 **.NET（C# / VB.NET）插件**所需的托管程序集（DLL + XML）精选库。
 > 按 **.NET TFM** 只保留代表版本，覆盖 **AutoCAD 2006 – 2027**。
+> （即原 `ObjectARX-SDK` 完整库的精简 .NET 子集。）
 
-> ⚠️ 本仓库是上游 `HexTTX/ObjectARX-SDK` 的 **fork（`ldd1good/ObjectARX-SDK`）**，已大幅精简，仅保留 .NET 开发必需内容，与原仓库不一致，属预期分叉。
+> ⚠️ 本仓库是上游 `HexTTX/ObjectARX-SDK`（原 ObjectARX SDK 完整库）的 **fork（`ldd1good/NetManaged`）**，已大幅精简，仅保留 .NET 开发必需内容，与原仓库不一致，属预期分叉。
 
 ---
 
@@ -75,15 +76,15 @@ ObjectARX-SDK/
 ```xml
 <ItemGroup>
   <Reference Include="AcMgd">
-    <HintPath>..\ObjectARX-SDK\2015-R20.0\inc\AcMgd.dll</HintPath>
+    <HintPath>..\Net托管类\2015-R20.0\inc\AcMgd.dll</HintPath>
     <Private>false</Private>
   </Reference>
   <Reference Include="AcDbMgd">
-    <HintPath>..\ObjectARX-SDK\2015-R20.0\inc\AcDbMgd.dll</HintPath>
+    <HintPath>..\Net托管类\2015-R20.0\inc\AcDbMgd.dll</HintPath>
     <Private>false</Private>
   </Reference>
   <Reference Include="AcCoreMgd">
-    <HintPath>..\ObjectARX-SDK\2015-R20.0\inc\AcCoreMgd.dll</HintPath>
+    <HintPath>..\Net托管类\2015-R20.0\inc\AcCoreMgd.dll</HintPath>
     <Private>false</Private>
   </Reference>
 </ItemGroup>
@@ -145,5 +146,5 @@ ObjectARX-SDK/
 ## 仓库信息
 
 - 上游：`HexTTX/ObjectARX-SDK`
-- 本 fork：`ldd1good/ObjectARX-SDK`（已精简，与上游内容不一致，预期）
+- 本 fork：`ldd1good/NetManaged`（已精简，与上游内容不一致，预期）
 - 最后更新：2026-10-13
