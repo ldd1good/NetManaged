@@ -1,5 +1,0 @@
-LIBRARY     IsmExample
-
-EXPORTS
-		acrxEntryPoint		PRIVATE
-		acrxGetApiVersion	PRIVATE

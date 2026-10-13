@@ -1,7 +1,0 @@
-
-LIBRARY      "AsDkPalette"
-
-EXPORTS
-	acrxEntryPoint		PRIVATE
-	acrxGetApiVersion	PRIVATE
-

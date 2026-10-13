@@ -1,6 +1,0 @@
-LIBRARY      template
-DESCRIPTION  'Template for AutoVision API'
-
-EXPORTS
-	acrxEntryPoint     PRIVATE
-	acrxGetApiVersion  PRIVATE

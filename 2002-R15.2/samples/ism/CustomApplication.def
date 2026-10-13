@@ -1,6 +1,0 @@
-DESCRIPTION 'Autodesk ISM sample application'
-LIBRARY     IsmExample
-
-EXPORTS
-		acrxEntryPoint		PRIVATE
-		acrxGetApiVersion	PRIVATE

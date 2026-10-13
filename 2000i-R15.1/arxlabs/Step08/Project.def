@@ -1,7 +1,0 @@
-
-LIBRARY      "AsdkProject"
-
-EXPORTS
-	acrxEntryPoint		PRIVATE
-	acrxGetApiVersion	PRIVATE
-

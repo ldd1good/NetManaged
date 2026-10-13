@@ -1,5 +1,0 @@
-LIBRARY      InputPoint
-
-EXPORTS
-acrxEntryPoint PRIVATE
-acrxGetApiVersion PRIVATE

@@ -1,7 +1,0 @@
-
-LIBRARY      "AsdkMaterialUi"
-
-EXPORTS
-	acrxEntryPoint		PRIVATE
-	acrxGetApiVersion	PRIVATE
-

@@ -1,7 +1,0 @@
-LIBRARY      entswerr
-DESCRIPTION  'ObjectARX sample program - entity manipulation with error checking'
-; (C) Copyright 1998 by Autodesk, Inc.
-
-EXPORTS
-		acrxEntryPoint		PRIVATE
-		acrxGetApiVersion	PRIVATE

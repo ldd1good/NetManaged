@@ -1,7 +1,0 @@
-
-LIBRARY      "AsdkDataTable"
-
-EXPORTS
-	acrxEntryPoint		PRIVATE
-	acrxGetApiVersion	PRIVATE
-

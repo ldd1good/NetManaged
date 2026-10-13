@@ -1,6 +1,0 @@
-LIBRARY      InputPoint
-DESCRIPTION  'Sample Input Point API Program'
-
-EXPORTS
-    _SetacrxPtp
-    acrxGetApiVersion

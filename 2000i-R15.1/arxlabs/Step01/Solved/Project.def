@@ -1,7 +1,0 @@
-
-LIBRARY      "Project"
-
-EXPORTS
-	acrxEntryPoint		PRIVATE
-	acrxGetApiVersion	PRIVATE
-

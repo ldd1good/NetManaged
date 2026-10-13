@@ -1,7 +1,0 @@
-
-LIBRARY      "asdkFileNav"
-
-EXPORTS
-	acrxEntryPoint		PRIVATE
-	acrxGetApiVersion	PRIVATE
-

@@ -1,7 +1,0 @@
-
-LIBRARY      "AsdkDblClick"
-
-EXPORTS
-	acrxEntryPoint		PRIVATE
-	acrxGetApiVersion	PRIVATE
-
